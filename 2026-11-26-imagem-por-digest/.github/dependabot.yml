@@ -1,0 +1,15 @@
+version: 2
+updates:
+  # Atualiza tag e digest das imagens base no Dockerfile da raiz
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "imagem-base"
+
+  # Mesma ideia para as actions presas por SHA nos workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
